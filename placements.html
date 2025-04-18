@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="/images/logo_nobg.png">
+  <title>Events | Pallavan College of Engineering</title>
+
+  <!-- Bootstrap, Google Fonts, Font Awesome, AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff !important;
+      border-bottom: 1px solid #dee2e6;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar .navbar-brand img {
+      height: 40px;
+      width: 40px;
+    }
+
+    .navbar .navbar-brand span {
+      color: #0d6efd;
+    }
+
+    .navbar .navbar-nav .nav-link {
+      color: #0d6efd !important;
+      margin: 0 8px;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .navbar .nav-link.fancy-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #ffc107;
+      transition: width 0.3s ease;
+    }
+
+    .navbar .nav-link.fancy-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
+    .navbar .btn-outline-light {
+      color: #0d6efd;
+      border-color: #0d6efd;
+    }
+
+    .navbar .btn-outline-light:hover {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    .navbar .btn-warning:hover {
+      background-color: #ffca2c;
+    }
+
+    .recruiter-logo {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeZoomIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    .recruiter-logo:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes fadeZoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Counter styling */
+    .counter {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #0d6efd;
+    }
+
+    .table-striped tbody tr td:first-child {
+      font-weight: 500;
+    }
+
+    /* Testimonials Carousel */
+    .carousel-inner {
+      padding: 2rem;
+    }
+
+    .testimonial-item {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .testimonial-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-item p {
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    .testimonial-item h5 {
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg glass-navbar">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+      <span class="fs-4">
+        <img src="images/logo.jpg" alt="Pallavan Logo" />
+      </span>
+      <span class="ms-2 fs-5">PALLAVAN COLLEGE OF ENGINEERING</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link fancy-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fancy-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link fancy-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link fancy-link" href="admissions.html">Admissions</a></li>
+        <li class="nav-item"><a class="nav-link fancy-link" href="placements.html">Placements</a></li>
+        <li class="nav-item"><a class="nav-link fancy-link" href="achievements.html">Achievements</a></li>
+        <li class="nav-item"><a class="btn btn-outline-light btn-sm mx-1 px-3 rounded-pill" href="login.html">Login</a></li>
+        <li class="nav-item"><a class="btn btn-warning btn-sm px-3 rounded-pill" href="signup.html">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Placements Content -->
+<section class="container mt-5" data-aos="fade-up">
+  <h1 class="text-center mb-4">PLACEMENT CELL</h1>
+  <p class="text-center">Our dedicated Placement and Training Cell works tirelessly to ensure students are well-prepared for their careers. We organize mock interviews, soft skills workshops, technical training, and industry interaction sessions throughout the year.</p>
+
+  <h4 class="mt-5 mb-3 text-center">TOP RECRUITERS</h4>
+  <div class="row row-cols-2 row-cols-md-4 g-4 text-center" data-aos="zoom-in">
+    <div class="col"><img src="images/recruiters/tcs.jpeg" alt="TCS" class="recruiter-logo mt-2"/><p>TCS</p></div>
+    <div class="col"><img src="images/recruiters/infosys.png" alt="Infosys" class="recruiter-logo mt-2"/><p>Infosys</p></div>
+    <div class="col"><img src="images/recruiters/wipro.jpeg" alt="Wipro" class="recruiter-logo mt-2"/><p>Wipro</p></div>
+    <div class="col"><img src="images/recruiters/hcl.jpg" alt="HCL" class="recruiter-logo mt-2"/><p>HCL</p></div>
+    <div class="col"><img src="images/recruiters/capgemini.jpg" alt="Capgemini" class="recruiter-logo mt-2"/><p>Capgemini</p></div>
+    <div class="col"><img src="images/recruiters/zoho.webp" alt="Zoho" class="recruiter-logo mt-2"/><p>Zoho</p></div>
+    <div class="col"><img src="images/recruiters/l&t.jpeg" alt="L&T Infotech" class="recruiter-logo mt-2"/><p>L&T Infotech</p></div>
+    <div class="col"><img src="images/recruiters/cognizant.jpg" alt="Cognizant" class="recruiter-logo mt-2"/><p>Cognizant</p></div>
+  </div>
+
+  <h4 class="mt-5 mb-3 text-center" data-aos="fade-up">PLACEMENT STATISTICS(2024)</h4>
+  <div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th>Branch</th>
+          <th>Students Placed</th>
+          <th>Highest Package</th>
+          <th>Average Package</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Computer Science</td><td><span class="counter" data-count="78">0</span></td><td><span class="counter" data-count="12">0</span> LPA</td><td><span class="counter" data-count="4.2">0</span> LPA</td></tr>
+        <tr><td>ECE</td><td><span class="counter" data-count="65">0</span></td><td><span class="counter" data-count="10">0</span> LPA</td><td><span class="counter" data-count="3.8">0</span> LPA</td></tr>
+        <tr><td>EEE</td><td><span class="counter" data-count="52">0</span></td><td><span class="counter" data-count="8">0</span> LPA</td><td><span class="counter" data-count="3.5">0</span> LPA</td></tr>
+        <tr><td>Mechanical</td><td><span class="counter" data-count="40">0</span></td><td><span class="counter" data-count="6">0</span> LPA</td><td><span class="counter" data-count="3.2">0</span> LPA</td></tr>
+        <tr><td>MCA</td><td><span class="counter" data-count="30">0</span></td><td><span class="counter" data-count="7.5">0</span> LPA</td><td><span class="counter" data-count="3.9">0</span> LPA</td></tr>
+        <tr><td>MBA</td><td><span class="counter" data-count="25">0</span></td><td><span class="counter" data-count="6.8">0</span> LPA</td><td><span class="counter" data-count="4.1">0</span> LPA</td></tr>
+        <tr><td>PG CSE</td><td><span class="counter" data-count="18">0</span></td><td><span class="counter" data-count="9">0</span> LPA</td><td><span class="counter" data-count="4.8">0</span> LPA</td></tr>
+        <tr><td>PG Applied Electronics</td><td><span class="counter" data-count="15">0</span></td><td><span class="counter" data-count="8.2">0</span> LPA</td><td><span class="counter" data-count="4.0">0</span> LPA</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="container mt-5" data-aos="fade-up">
+  <h3 class="text-center mb-4">WHAT OUR STUDENTS SAY</h3>
+  <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner text-center">
+      <div class="carousel-item active">
+        <div class="testimonial-item">
+          <p>"The placement training was intense and super helpful. I landed a job in my dream company!"</p>
+          <h5>— DK, CSE</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="testimonial-item">
+          <p>"Pallavan’s placement cell really supported us with mock interviews and industry sessions."</p>
+          <h5>— Raj, ECE</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="testimonial-item">
+          <p>"I’m thankful for the soft skills and aptitude training. Helped me crack multiple interviews."</p>
+          <h5>— TANU, MBA</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Information Section -->
+<section id="infoSection" class="contact-info">
+  <div class="container">
+    <h4 class="text-center mb-5 fw-bold" data-aos="fade-up">CONTACT US</h4>
+    <div class="row justify-content-center">
+      <div class="col-md-5 mb-4" data-aos="fade-right">
+        <div class="d-flex align-items-start">
+          <i class="fas fa-map-marker-alt fa-2x me-3 text-primary"></i>
+          <div>
+            <h5 class="fw-semibold">Address:</h5>
+            <p class="mb-0">Thimmasamudram (Near Whitegate),<br />Kanchipuram - 631502,<br />Tamil Nadu, India​</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5" data-aos="fade-left">
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-envelope fa-2x me-3 text-primary"></i>
+          <div>
+            <h5 class="fw-semibold">Email:</h5>
+            <p class="mb-0">pce_kanchi@rediffmail.com​</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-phone-alt fa-2x me-3 text-primary"></i>
+          <div>
+            <h5 class="fw-semibold">Phone:</h5>
+            <p class="mb-0">044-27277967​</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-start">
+          <i class="fas fa-globe fa-2x me-3 text-primary"></i>
+          <div>
+            <h5 class="fw-semibold">Website:</h5>
+            <p class="mb-0"><a href="http://www.pallavan.edu.in" target="_blank">www.pallavan.edu.in</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-primary text-white text-center p-3 mt-5">
+  &copy; 2025 Pallavan College of Engineering. All rights reserved.
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.min.js"></script>
+
+<script>
+  AOS.init();
+
+  window.addEventListener("load", () => {
+    document.querySelectorAll('.counter').forEach(counter => {
+      const value = parseFloat(counter.getAttribute('data-count'));
+      const isFloat = value % 1 !== 0;
+      const options = isFloat ? { decimalPlaces: 1 } : {};
+      const countUp = new CountUp(counter, value, options);
+      if (!countUp.error) {
+        countUp.start();
+      } else {
+        console.error(countUp.error);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievements | Pallavan College of Engineering</title>
+  <!-- Bootstrap, Google Fonts, Font Awesome, AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff !important;
+      border-bottom: 1px solid #dee2e6;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar .navbar-brand img {
+      height: 40px;
+      width: 40px;
+    }
+
+    .navbar .navbar-brand span {
+      color: #0d6efd;
+    }
+
+    .navbar .navbar-nav .nav-link {
+      color: #0d6efd !important;
+      margin: 0 8px;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .navbar .nav-link.fancy-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #ffc107;
+      transition: width 0.3s ease;
+    }
+
+    .navbar .nav-link.fancy-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
+    .navbar .btn-outline-light {
+      color: #0d6efd;
+      border-color: #0d6efd;
+    }
+
+    .navbar .btn-outline-light:hover {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    .navbar .btn-warning:hover {
+      background-color: #ffca2c;
+    }
+
+    .ranking-table {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+        <span class="fs-4">
+          <img src="images/logo.jpg" alt="Pallavan Logo" />
+        </span>
+        <span class="ms-2 fs-5">PALLAVAN COLLEGE OF ENGINEERING</span>
+      </a>
+
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link fancy-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fancy-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link fancy-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link fancy-link" href="admissions.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link fancy-link" href="placements.html">Placements</a></li>
+          <li class="nav-item"><a class="nav-link fancy-link" href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a class="btn btn-outline-light btn-sm mx-1 px-3 rounded-pill" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="btn btn-warning btn-sm px-3 rounded-pill" href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Achievements Content -->
+  <section class="container mt-5 pt-5">
+    <h1 class="text-center mb-4" data-aos="fade-up">COLLEGE ACHIEVEMENTS</h1>
+    <div class="row">
+      <div class="col-md-6 mb-4" data-aos="fade-right">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">NATIONAL INNOVATION AWARD</h5>
+            <p class="card-text">Final-year Mechanical Engineering students won for their solar-powered agricultural sprayer.</p>
+            <p class="text-muted">Year: 2024</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4" data-aos="fade-left">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">BEST HACKATHON TEAM</h5>
+            <p class="card-text">CSE students secured 1st in Smart India Hackathon with a real-time flood alert app.</p>
+            <p class="text-muted">Year: 2023</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4" data-aos="zoom-in">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">RESEARCH PUBLICATION</h5>
+            <p class="card-text">120+ papers in international journals on AI, IoT, renewable energy.</p>
+            <p class="text-muted">Updated: 2024</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4" data-aos="zoom-in-up">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">SPORTS AND CULTURALS</h5>
+            <p class="card-text">State-level championships in kabaddi, basketball, and cultural dance.</p>
+            <p class="text-muted">Ongoing Achievements</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- College Rankings -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4" data-aos="fade-up">COLLEGE RANKINGS DECLARED BY ANNA UNIVERSITY</h2>
+    <div class="ranking-table" data-aos="fade-up">
+      <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+          <tr>
+            <th>#</th>
+            <th>Month & Year</th>
+            <th>Rank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>April 2003</td><td>16th</td></tr>
+          <tr><td>2</td><td>October 2003</td><td>17th</td></tr>
+          <tr><td>3</td><td>April 2004</td><td>19th</td></tr>
+          <tr><td>4</td><td>October 2004</td><td>11th</td></tr>
+          <tr><td>5</td><td>April 2008</td><td>11th</td></tr>
+          <tr><td>6</td><td>October 2008</td><td>8th</td></tr>
+          <tr><td>7</td><td>April 2011</td><td>18th</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Rank Holders -->
+<section class="container my-5">
+  <h2 class="text-center mb-4" data-aos="fade-up">UNIVERSITY RANK HOLDERS</h2>
+  <div class="ranking-table" data-aos="fade-up">
+    <table class="table table-bordered table-striped">
+      <thead class="table-warning">
+        <tr>
+          <th>Batch</th>
+          <th>Achiever’s Name</th>
+          <th>Branch</th>
+          <th>CGPA / %</th>
+          <th>Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2019</td><td>PAVITHRA V</td><td>MCA</td><td>8.88</td><td>18</td></tr>
+        <tr><td>2018</td><td>PRIYA M</td><td>MCA</td><td>8.64</td><td>33</td></tr>
+        <tr><td>2018</td><td>JANANI A</td><td>M.E CSE</td><td>8.71</td><td>22</td></tr>
+        <tr><td>2018</td><td>JAYABHARATHI J L</td><td>MBA</td><td>8.65</td><td>16</td></tr>
+        <tr><td>2017</td><td>LAYAVARJITHA S</td><td>MCA</td><td>8.68</td><td>35</td></tr>
+        <tr><td>2017</td><td>RAJALAKSHMI R</td><td>MBA</td><td>8.39</td><td>39</td></tr>
+        <tr><td>2016</td><td>JAYA BHARATHI J L</td><td>B.E. ECE</td><td>8.94</td><td>35</td></tr>
+        <tr><td>2016</td><td>INDUMATHY N</td><td>B.Tech IT</td><td>8.54</td><td>50</td></tr>
+        <tr><td>2016</td><td>VITHYA P</td><td>MBA</td><td>8.24</td><td>50</td></tr>
+        <tr><td>2016</td><td>SHARMILA R</td><td>MCA</td><td>8.97</td><td>17</td></tr>
+        <tr><td>2016</td><td>GAYATHRI S</td><td>MCA</td><td>8.75</td><td>37</td></tr>
+        <tr><td>2016</td><td>DEEPIKA P</td><td>M.E CSE</td><td>8.49</td><td>39</td></tr>
+        <tr><td>2016</td><td>GOWRI PRIYA A</td><td>M.E CSE</td><td>8.65</td><td>50</td></tr>
+        <tr><td>2016</td><td>NADHIYADEVI G</td><td>MBA</td><td>8.39</td><td>36</td></tr>
+        <tr><td>2015</td><td>K.YAMINI</td><td>EEE</td><td>8.76</td><td>40</td></tr>
+        <tr><td>2015</td><td>R.VITHYA</td><td>M.E(AE)</td><td>8.62</td><td>29</td></tr>
+        <tr><td>2015</td><td>G.RAJESHWARI</td><td>M.E(AE)</td><td>8.55</td><td>34</td></tr>
+        <tr><td>2015</td><td>M.RAJALAKSHMI</td><td>M.E(AE)</td><td>8.48</td><td>39</td></tr>
+        <tr><td>2015</td><td>T.NISHANTHI</td><td>M.E(AE)</td><td>8.35</td><td>48</td></tr>
+        <tr><td>2015</td><td>M.MUNEERUNNISA</td><td>M.E(CSE)</td><td>8.71</td><td>31</td></tr>
+        <tr><td>2015</td><td>V.INDHUMATHI</td><td>M.E(CSE)</td><td>8.56</td><td>42</td></tr>
+        <tr><td>2015</td><td>S.USHA RANI</td><td>M.E(CSE)</td><td>8.51</td><td>46</td></tr>
+        <tr><td>2015</td><td>R.VAISHNAVI</td><td>M.E(CSE)</td><td>8.49</td><td>47</td></tr>
+        <tr><td>2015</td><td>S.ANAND</td><td>M.E(MFG.ENG)</td><td>8.84</td><td>9</td></tr>
+        <tr><td>2015</td><td>S.G.KARTHIKEYAN</td><td>M.E(MFG.ENG)</td><td>8.75</td><td>13</td></tr>
+        <tr><td>2015</td><td>D.USHARANI</td><td>MBA</td><td>8.45</td><td>10</td></tr>
+        <tr><td>2015</td><td>K.INDUMATHI</td><td>MCA</td><td>8.68</td><td>42</td></tr>
+        <tr><td>2015</td><td>T.SASIKALA</td><td>MCA</td><td>8.62</td><td>48</td></tr>
+        <tr><td>2014</td><td>R.GEETHALAKSHMI</td><td>ECE</td><td>8.63</td><td>46</td></tr>
+        <tr><td>2014</td><td>R.PARTHASARATHY</td><td>MECH</td><td>8.69</td><td>47</td></tr>
+        <tr><td>2014</td><td>P.SUGASINI</td><td>M.E(AE)</td><td>8.59</td><td>27</td></tr>
+        <tr><td>2013</td><td>V.LAKSHMIKANDAN</td><td>MECH</td><td>8.87</td><td>24</td></tr>
+        <tr><td>2013</td><td>S.MOHANRAJ</td><td>MECH</td><td>8.77</td><td>32</td></tr>
+        <tr><td>2013</td><td>S.VIMALKUMAR</td><td>CSE</td><td>8.62</td><td>43</td></tr>
+        <tr><td>2013</td><td>J.MALATHY</td><td>CSE</td><td>8.55</td><td>50</td></tr>
+        <tr><td>2013</td><td>G.HEMAMALINI</td><td>ECE</td><td>8.7</td><td>47</td></tr>
+        <tr><td>2013</td><td>S.MOHANAPRIYA</td><td>MCA</td><td>8.53</td><td>38</td></tr>
+        <tr><td>2013</td><td>K.SARANYA</td><td>MCA</td><td>8.47</td><td>44</td></tr>
+        <tr><td>2012</td><td>K.GAJAPRIYA</td><td>MCA</td><td>8.49</td><td>48</td></tr>
+        <tr><td>2012</td><td>M.LEENA DOROTHY</td><td>MBA</td><td>8.12</td><td>50</td></tr>
+        <tr><td>2011</td><td>D.KATHIRAVAN</td><td>MECH</td><td>89</td><td>6</td></tr>
+        <tr><td>2011</td><td>G.MAGESWARI</td><td>CSE</td><td>88</td><td>7</td></tr>
+        <tr><td>2010</td><td>E.VAISHALI</td><td>IT</td><td>89</td><td>8</td></tr>
+        <tr><td>2010</td><td>B.VIJAYATHARANI</td><td>IT</td><td>88</td><td>24</td></tr>
+        <tr><td>2010</td><td>N.POONKHUZHALI</td><td>MCA</td><td>87</td><td>21</td></tr>
+        <tr><td>2010</td><td>S.SARANYA</td><td>MCA</td><td>86</td><td>47</td></tr>
+        <tr><td>2009</td><td>T.S.SAJIN</td><td>MECH</td><td>89</td><td>9</td></tr>
+        <tr><td>2009</td><td>S.BALASUBRAMANIYAM</td><td>EEE</td><td>86</td><td>46</td></tr>
+        <tr><td>2009</td><td>R.JOTHI</td><td>IT</td><td>90</td><td>2</td></tr>
+        <tr><td>2009</td><td>S.UMASELVI</td><td>ECE</td><td>88</td><td>34</td></tr>
+        <tr><td>2008</td><td>S.SANGITHAA</td><td>ECE</td><td>88</td><td>34</td></tr>
+        <tr><td>2008</td><td>M.LINGAMOORTHY</td><td>EEE</td><td>88</td><td>9</td></tr>
+        <tr><td>2007</td><td>V.ARUN KUMAR</td><td>MECH</td><td>87</td><td>40</td></tr>
+        <tr><td>2007</td><td>I.ANAND DANIEL</td><td>MECH</td><td>86</td><td>47</td></tr>
+        <tr><td>2007</td><td>K.SENTHAMIZHCHELVI</td><td>ECE</td><td>88</td><td>30</td></tr>
+        <tr><td>2006</td><td>J.BALAJI</td><td>ECE</td><td>90</td><td>10</td></tr>
+        <tr><td>2006</td><td>S.SAVITHA</td><td>ECE</td><td>87</td><td>45</td></tr>
+        <tr><td>2006</td><td>B.THIYAGARAJAN</td><td>EEE</td><td>88</td><td>6</td></tr>
+        <tr><td>2006</td><td>A.ANNAMALAI</td><td>EEE</td><td>85</td><td>41</td></tr>
+        <tr><td>2006</td><td>A.M.JAFFER SIRAJUDDIN</td><td>MECH</td><td>87</td><td>20</td></tr>
+        <tr><td>2006</td><td>DILIP KUMAR RAVI</td><td>MECH</td><td>86</td><td>45</td></tr>
+        <tr><td>2005</td><td>M.HARISH KUMAR</td><td>MECH</td><td>86</td><td>12</td></tr>
+        <tr><td>2004</td><td>V.NAMERAJ</td><td>MECH</td><td>86</td><td>10</td></tr>
+        <tr><td>2004</td><td>OLIVIA RAMYA CHITRANJAN</td><td>EEE</td><td>89</td><td>11</td></tr>
+        <tr><td>2004</td><td>C.POONGOTHAI</td><td>EEE</td><td>88</td><td>20</td></tr>
+        <tr><td>2003</td><td>R.GANESH</td><td>MECH</td><td>88</td><td>19</td></tr>
+        <tr><td>2002</td><td>R.PRAKASH</td><td>MECH</td><td>85</td><td>10</td></tr>
+        <tr><td>2001</td><td>K.AMARNATH SINGH</td><td>MECH</td><td>83</td><td>7</td></tr>
+        <tr><td>2001</td><td>T.SENTHIL KUMAR</td><td>MECH</td><td>82</td><td>10</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Contact Information Section -->
+<section id="infoSection" class="contact-info">
+  <div class="container">
+    <h4 class="text-center mb-5 fw-bold" data-aos="fade-up">CONTACT US</h4>
+    <div class="row justify-content-center">
+      <div class="col-md-5 mb-4" data-aos="fade-right">
+        <div class="d-flex align-items-start">
+          <i class="fas fa-map-marker-alt fa-2x me-3 text-primary"></i>
+          <div>
+            <h5 class="fw-semibold">Address:</h5>
+            <p class="mb-0">Thimmasamudram (Near Whitegate),<br />Kanchipuram - 631502,<br />Tamil Nadu, India​</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5" data-aos="fade-left">
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-envelope fa-2x me-3 text-primary"></i>
+          <div>
+            <h5 class="fw-semibold">Email:</h5>
+            <p class="mb-0">pce_kanchi@rediffmail.com​</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-phone-alt fa-2x me-3 text-primary"></i>
+          <div>
+            <h5 class="fw-semibold">Phone:</h5>
+            <p class="mb-0">044-27277967​</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-start">
+          <i class="fas fa-globe fa-2x me-3 text-primary"></i>
+          <div>
+            <h5 class="fw-semibold">Website:</h5>
+            <p class="mb-0"><a href="http://www.pallavan.edu.in" target="_blank">www.pallavan.edu.in</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center p-3 mt-5">
+    &copy; 2025 Pallavan College of Engineering. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+
+</html>
