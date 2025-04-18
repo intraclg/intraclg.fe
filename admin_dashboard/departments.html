@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Departments | IntraClg Admin</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      background-color: #f4f4f4;
+    }
+
+    /* Sidebar style from admin_dashboard.html */
+    .sidebar {
+      height: 100vh;
+      background: linear-gradient(180deg, #ffffff, #ffecec);
+      padding: 25px 20px;
+      border-right: 1px solid #ddd;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-weight: 500;
+      color: #dc3545;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #fce3e3;
+      transform: translateX(5px);
+    }
+
+    .sidebar a.active {
+      background-color: #f8d7da;
+      font-weight: bold;
+    }
+
+    .dept-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background: white;
+      transition: 0.3s ease;
+    }
+    .dept-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+    .dept-title {
+      font-weight: 600;
+    }
+
+    .action-btns {
+      margin-top: 10px;
+    }
+    .action-btns button {
+      margin-right: 10px;
+    }
+
+    .form-control:focus {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">IntraClg - Admin</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../login.html"><i class="bi bi-box-arrow-right me-1"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Layout -->
+<div class="container-fluid mt-3">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-md-3 sidebar">
+      <div class="text-center mb-4">
+        <img src="../images/admin.png" alt="Admin" class="mb-2" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);" />
+        <p class="mt-2 mb-0 fw-bold">Administrator</p>
+        <small class="text-muted">Super Admin</small>
+      </div>
+
+      <a href="../admin_dashboard.html"><i class="bi bi-house-door me-2"></i> Dashboard</a>
+      <a href="profile.html"><i class="bi bi-person-badge me-2"></i> Profile</a>
+      <a href="users.html"><i class="bi bi-people me-2"></i> Manage Users</a>
+      <a href="departments.html" class="active"><i class="bi bi-building me-2"></i> Departments</a>
+      <a href="reports.html"><i class="bi bi-bar-chart-line me-2"></i> Reports & Analytics</a>
+      <a href="site_settings.html"><i class="bi bi-gear-fill me-2"></i> Site Settings</a>
+    </div>
+
+    <!-- Content Area -->
+    <div class="col-md-9">
+      <h3 class="text-danger mb-4" data-aos="fade-right">🏫 Departments</h3>
+
+      <!-- Add Department -->
+      <form class="mb-4" data-aos="fade-up">
+        <div class="mb-3">
+          <label for="newDept" class="form-label fw-semibold">Add New Department</label>
+          <input type="text" class="form-control" id="newDept" placeholder="Eg: Computer Science & Engineering"/>
+        </div>
+        <button type="submit" class="btn btn-danger"><i class="bi bi-plus-circle me-1"></i>Add Department</button>
+      </form>
+
+      <!-- Search Filter -->
+      <div class="mb-4" data-aos="fade-up">
+        <input type="text" id="searchInput" class="form-control" placeholder="🔍 Search Departments..." onkeyup="filterDepartments()" />
+      </div>
+
+      <!-- Department List -->
+      <div id="departmentList">
+        <div class="dept-card" data-aos="fade-up">
+          <div class="dept-title">Computer Science and Engineering</div>
+          <p>Head: Dr. Suresh Kumar | Total Students: 340</p>
+          <div class="action-btns">
+            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i> Delete</button>
+          </div>
+        </div>
+
+        <div class="dept-card" data-aos="fade-up">
+          <div class="dept-title">Electronics and Communication Engineering</div>
+          <p>Head: Dr. Latha R | Total Students: 280</p>
+          <div class="action-btns">
+            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i> Delete</button>
+          </div>
+        </div>
+
+        <div class="dept-card" data-aos="fade-up">
+          <div class="dept-title">Mechanical Engineering</div>
+          <p>Head: Dr. Naveen R | Total Students: 220</p>
+          <div class="action-btns">
+            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i> Delete</button>
+          </div>
+        </div>
+
+        <div class="dept-card" data-aos="fade-up">
+          <div class="dept-title">Civil Engineering</div>
+          <p>Head: Dr. Priya G | Total Students: 180</p>
+          <div class="action-btns">
+            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i> Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center p-3 mt-5">
+  &copy; 2025 IntraClg Admin Panel. All rights reserved.
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init();
+
+  // Live Filter
+  function filterDepartments() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const cards = document.querySelectorAll("#departmentList .dept-card");
+
+    cards.forEach(card => {
+      const title = card.querySelector(".dept-title").textContent.toLowerCase();
+      card.style.display = title.includes(input) ? "block" : "none";
+    });
+  }
+</script>
+
+</body>
+</html>

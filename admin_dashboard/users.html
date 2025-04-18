@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Users | IntraClg Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f4f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .sidebar {
+      height: 100vh;
+      background: linear-gradient(180deg, #ffffff, #ffecec);
+      padding: 25px 20px;
+      border-right: 1px solid #ddd;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-weight: 500;
+      color: #dc3545;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #fce3e3;
+      transform: translateX(5px);
+    }
+
+    .sidebar a.active {
+      background-color: #f8d7da;
+      font-weight: bold;
+    }
+
+    .main-content {
+      padding: 40px 50px;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .table-wrapper {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .table th, .table td {
+      vertical-align: middle;
+    }
+
+    .btn-sm {
+      transition: all 0.2s ease;
+    }
+
+    .btn-sm:hover {
+      transform: scale(1.05);
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-semibold" href="#">IntraClg - Admin</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="../login.html">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Layout -->
+<div class="container-fluid mt-3">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-md-3 sidebar">
+      <div class="text-center mb-4">
+        <img src="../images/admin.png" alt="Admin" class="mb-2" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);" />
+        <p class="mt-2 mb-0 fw-bold">Administrator</p>
+        <small class="text-muted">Super Admin</small>
+      </div>
+      <a href="../admin_dashboard.html"><i class="bi bi-house-door me-2"></i> Dashboard</a>
+      <a href="profile.html"><i class="bi bi-person-badge me-2"></i> Profile</a>
+      <a href="users.html" class="active"><i class="bi bi-people me-2"></i> Manage Users</a>
+      <a href="departments.html"><i class="bi bi-building me-2"></i> Departments</a>
+      <a href="reports.html"><i class="bi bi-bar-chart-line me-2"></i> Reports & Analytics</a>
+      <a href="site_settings.html"><i class="bi bi-gear-fill me-2"></i> Site Settings</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 main-content">
+      <h3 class="text-danger mb-4"><i class="bi bi-people-fill me-2"></i>Manage Users</h3>
+
+      <!-- Search -->
+      <div class="search-bar d-flex justify-content-between">
+        <input type="text" class="form-control w-50" placeholder="Search users by name, email, or role...">
+        <button class="btn btn-danger ms-2"><i class="bi bi-plus-circle me-1"></i>Add User</button>
+      </div>
+
+      <!-- Table -->
+      <div class="table-wrapper mt-3">
+        <table class="table table-bordered table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Arjun V</td><td>Student</td><td>arjun@pce.edu</td><td><span class="badge bg-success">Active</span></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+            <tr><td>2</td><td>Divya R</td><td>Faculty</td><td>divya@pce.edu</td><td><span class="badge bg-success">Active</span></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+            <tr><td>3</td><td>Rajesh S</td><td>Alumni</td><td>rajesh@pce.edu</td><td><span class="badge bg-secondary">Inactive</span></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+            <tr><td>4</td><td>Meera J</td><td>Student</td><td>meera@pce.edu</td><td><span class="badge bg-success">Active</span></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+            <tr><td>5</td><td>Prakash K</td><td>Faculty</td><td>prakash@pce.edu</td><td><span class="badge bg-secondary">Inactive</span></td><td><button class="btn btn-sm btn-warning">Edit</button> <button class="btn btn-sm btn-danger">Delete</button></td></tr>
+          </tbody>
+        </table>
+
+        <!-- Pagination (Dummy) -->
+        <nav>
+          <ul class="pagination justify-content-end">
+            <li class="page-item disabled"><a class="page-link">Previous</a></li>
+            <li class="page-item active"><a class="page-link">1</a></li>
+            <li class="page-item"><a class="page-link">2</a></li>
+            <li class="page-item"><a class="page-link">3</a></li>
+            <li class="page-item"><a class="page-link">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center p-3 mt-5">
+  &copy; 2025 IntraClg Admin Panel. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
