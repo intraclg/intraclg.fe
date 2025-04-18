@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Alumni Profile | IntraClg</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f1f8ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      flex-direction: column;
+    }
+    .container {
+      width: 900px;
+      padding: 20px;
+      margin-top: 70px; /* Added margin to ensure content is below navbar */
+    }
+    .profile-form {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .profile-form:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #28a745;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .profile-img:hover {
+      transform: scale(1.1);
+    }
+    .btn-update {
+      background-color: #28a745;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 500;
+      border: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn-update:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+    .form-label {
+      font-weight: 600;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    .form-label:hover {
+      color: #28a745;
+    }
+    .form-control {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      padding: 12px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #28a745;
+      box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    .navbar:hover {
+      background-color: #218838;
+    }
+    footer {
+      margin-top: 30px;
+      background-color: #28a745;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      width: 100%;
+      bottom: 0;
+    }
+    footer:hover {
+      background-color: #218838;
+    }
+    .alert {
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .alert.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">IntraClg - Alumni</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="main-content">
+    <h3 class="text-success mb-4 text-center">Update Your Profile</h3>
+    <div class="profile-form">
+      <!-- Current Profile Picture -->
+      <div class="text-center mb-4">
+        <img id="currentProfilePic" src="../images/student/stud10.jpg" alt="Profile Picture" class="profile-img">
+        <h5 id="alumniName">Shiva</h5>
+        <small id="alumniYear" class="text-muted">Batch of 2020</small>
+      </div>
+
+      <!-- Update Profile Picture -->
+      <div class="mb-3">
+        <label for="photo" class="form-label">Upload New Profile Picture</label>
+        <input type="file" class="form-control" id="photo" accept="image/*">
+      </div>
+
+      <!-- Other Profile Data -->
+      <form id="updateForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <label for="year" class="form-label">Graduation Year</label>
+          <input type="number" class="form-control" id="year" placeholder="e.g. 2020" required>
+        </div>
+        <div class="mb-3">
+          <label for="branch" class="form-label">Branch</label>
+          <input type="text" class="form-control" id="branch" placeholder="e.g. CSE, ECE" required>
+        </div>
+        <div class="mb-3">
+          <label for="company" class="form-label">Current Company</label>
+          <input type="text" class="form-control" id="company" required>
+        </div>
+        <div class="mb-3">
+          <label for="bio" class="form-label">Short Bio</label>
+          <textarea class="form-control" id="bio" rows="3" placeholder="Share your journey..." required></textarea>
+        </div>
+        <button type="submit" class="btn-update">Save Profile</button>
+      </form>
+      <!-- Success/Error Message -->
+      <div id="message" class="alert alert-success mt-4 d-none">Profile updated successfully!</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 IntraClg. All Rights Reserved.</p>
+</footer>
+
+<!-- Script -->
+<script>
+  const form = document.getElementById("updateForm");
+  const messageDiv = document.getElementById("message");
+  
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    messageDiv.classList.remove("d-none");
+    messageDiv.classList.add("show");
+    setTimeout(() => messageDiv.classList.remove("show"), 3000);
+  });
+</script>
+<script>
+  const form = document.getElementById("updateForm");
+  const messageDiv = document.getElementById("message");
+  
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    // Show success message
+    messageDiv.classList.remove("d-none");
+    messageDiv.classList.add("show");
+    
+    // Simulate saving process (you can add your actual saving logic here)
+    setTimeout(() => {
+      // After success, redirect to profile page
+      window.location.href = "profile.html";
+    }, 2000); // Delay before redirecting to allow user to see the success message
+  });
+</script>
+
+
+</body>
+</html>
